@@ -1,0 +1,33 @@
+:root {
+  color-scheme: light;
+  font-family: 'Golos Text Variable', sans-serif;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+
+  --page: #f3f3ee;
+  --text: #1e241f;
+  --text-muted: #596058;
+  --input: #fbfcf8;
+  --input-edge: #858d81;
+  --button: #242c25;
+  --button-hover: #3a463b;
+  --focus: #95522e;
+  --form-width: 352px;
+  --accent: #f0b482;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; min-width: 290px; color: var(--text); background: var(--page); }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+code { font-family: var(--mono); }
+svg { flex: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0s !important; }
+}

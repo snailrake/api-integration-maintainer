@@ -1,0 +1,151 @@
+.a3-panel {
+  --ink: #f2efea;
+  --secondary: #c6c2bc;
+  --quiet: #aaa9a4;
+  --edge: #373633;
+  --seam: #44423e;
+  --rim: #d5cdc326;
+  --chassis: #171818;
+  --backplane: #1c1d1d;
+  --paper: #292724;
+  --paper-body: #242321;
+  --paper-bar: #302d28;
+  --paper-edge: #514b42;
+  --paper-guides: #c5b6a137;
+  --paper-ink: #ded8cd;
+  --surface-editor: #1b1e20;
+  --editor-chrome: #282b2e;
+  --runner-chrome: #2a2d2b;
+  --terminal: #111514;
+  --terminal-log: #1d2220;
+  --surface-review: #232427;
+  --review-face: linear-gradient(164deg, #292928, var(--surface-review) 68%);
+  --diff-body: #191b1d;
+  --diff-hunk: #313437;
+  --shadow-document: 0 11px 26px #0a090846, inset 0 1px var(--rim);
+  --shadow-editor: 0 15px 35px #08090a75, inset 0 1px var(--rim);
+  --shadow-terminal: 0 16px 34px #090b095e;
+  --shadow-review: 0 19px 40px #09090970, inset 0 1px var(--rim);
+
+  --accent-control: #efd0ad;
+  --button-face: #282624;
+  --button-hover: #363028;
+  --button-edge: #73695c;
+  --track: #666059;
+  --change: #f4ca99;
+  --change-bg: #bd91552b;
+  --change-rim: #b0865c;
+  --signal-start: #eec998;
+  --signal-middle: #bd9975;
+  --signal-end: #d5ae8b;
+  --signal-base: #a883601a;
+  --verb-face: #42372a;
+  --syntax-type: #a9d1e2;
+  --syntax-method: #d9c6ee;
+  --syntax-keyword: #f3b0bc;
+  --syntax-literal: #d7dcab;
+
+  --positive: #b5e4c4;
+  --negative: #f2b5ad;
+  --status-good: #2a4233;
+  --status-bad: #543533;
+  --diff-add-face: #283c31;
+  --diff-add-rim: #78a68a;
+  --diff-remove-face: #402e2c;
+  --diff-remove-rim: #ad7770;
+  --proof: #27352d;
+  --proof-value: #d9f2df;
+  --proof-detail: #93b69e56;
+  --proof-rule: #506458;
+  --dialog-backdrop: #0d0e0dbb;
+}
+
+.a3-panel {
+  background: var(--chassis);
+  border-color: var(--edge);
+
+  & :is(button, input):focus-visible { outline-color: var(--accent-control); }
+  & :is(.a3-header, .a3-transport) { border-color: var(--edge); }
+  & .a3-repository svg { color: var(--accent-control); }
+  & .a3-demo > span { background: var(--change-rim); }
+  & .a3-aperture { background: var(--backplane); }
+  & .a3-scrub-track { background: var(--track); }
+  & .a3-scrub-track > span { background: var(--accent-control); }
+  & .a3-scrub input::-webkit-slider-thumb { background: var(--ink); }
+  & .a3-scrub input::-moz-range-thumb { background: var(--ink); }
+  & :is(.a3-play, .a3-dialog-heading button) {
+    background: var(--button-face);
+    border-color: var(--button-edge);
+  }
+  & .a3-play svg { color: var(--accent-control); }
+  @media (hover: hover) and (pointer: fine) {
+    & :is(.a3-play, .a3-dialog-heading button):hover {
+      background: var(--button-hover);
+      border-color: var(--accent-control);
+    }
+  }
+  & dialog { background: var(--surface-review); border-color: var(--button-edge); }
+  & dialog::backdrop { background: var(--dialog-backdrop); }
+
+  & .a3-contract { background: var(--paper); border-color: var(--paper-edge); box-shadow: var(--shadow-document); }
+  & .a3-operation { background: var(--paper-bar); border-color: var(--paper-edge); }
+  & .a3-verb { background: var(--verb-face); border-color: var(--change-rim); color: var(--change); }
+  & .a3-http span { color: var(--positive); }
+  & .a3-schema { background: var(--paper-body); }
+  & .a3-yaml-line > code { color: var(--paper-ink); }
+  & .a3-yaml-indent { background-image: repeating-linear-gradient(to right, var(--paper-guides) 0 1px, transparent 1px 16px); }
+  & :is(.a3-flat-guide, .a3-leaf-guide) { background: var(--change-bg); box-shadow: inset 2px 0 var(--change-rim); }
+  & .a3-leaf-guide { box-shadow: inset 0 -1px var(--change-rim), inset 2px 0 var(--change-rim); }
+  & .a3-schema-previous { border-color: var(--diff-remove-rim); }
+
+  & .a3-editor { border-color: var(--seam); box-shadow: var(--shadow-editor); }
+  & :is(.a3-editor-tabs, .a3-editor-footer) { background: var(--editor-chrome); border-color: var(--seam); }
+  & .a3-current-tab {
+    background: var(--surface-editor);
+    border-inline-color: var(--seam);
+    border-top-color: var(--change-rim);
+  }
+  & .a3-java-mark { background: var(--paper-ink); }
+  & .a3-editor-path, & .a3-java-line > span:first-child { border-color: var(--seam); }
+  & .a3-java-target > span:first-child, & .a3-edit-sign { color: var(--change); }
+  & .a3-java-edit { background: var(--change-bg); box-shadow: inset 2px 0 var(--change-rim), inset 0 -1px color-mix(in srgb, var(--change-rim) 40%, transparent); }
+  & .a3-java-marked { background: var(--diff-remove-face); box-shadow: inset 2px 0 var(--diff-remove-rim); }
+  & .a3-call-underline { background: var(--change-rim); }
+  & .a3-trace-base { stroke: var(--signal-base); }
+  & #a3-trace-ink > stop:first-child { stop-color: var(--signal-start); }
+  & #a3-trace-ink > stop:nth-child(2) { stop-color: var(--signal-middle); }
+  & #a3-trace-ink > stop:last-child { stop-color: var(--signal-end); }
+
+  & .a3-checks { background: var(--terminal-log); border-color: var(--seam); box-shadow: var(--shadow-terminal); }
+  & .a3-runner { background: var(--runner-chrome); border-color: var(--seam); }
+  & .a3-command { background: var(--terminal); border-color: var(--seam); }
+  & .a3-prompt, & .a3-command span { color: var(--accent-control); }
+  & .a3-log-row + .a3-log-row { border-color: var(--seam); }
+  & .a3-fail-symbol { background: var(--status-bad); }
+  & :is(.a3-pass-symbol, .a3-pr-open) { background: var(--status-good); color: var(--positive); }
+  & .a3-assertion { background: var(--proof); border-color: var(--proof-rule); }
+  & .a3-assertion-main > span, & .a3-expected > span:first-child, & .a3-waiting-number { color: var(--secondary); }
+  & .a3-retained-number { color: var(--proof-value); }
+  & .a3-expected { border-color: var(--proof-detail); }
+  & .a3-expected code { color: var(--ink); }
+
+  & .a3-publication { background: var(--review-face); border-color: var(--seam); box-shadow: var(--shadow-review); }
+  & .a3-pr-branch { color: var(--secondary); }
+  & .a3-pr-branch > svg { color: var(--accent-control); }
+  & .a3-pr-branch > code { background: var(--diff-hunk); }
+  & .a3-diff { background: var(--diff-body); border-color: var(--seam); }
+  & .a3-diff header { background: var(--editor-chrome); }
+  & .a3-diff-hunk { background: var(--diff-hunk); color: var(--secondary); }
+  & .a3-diff-delete { --diff-edge: var(--diff-remove-rim); background: var(--diff-remove-face); color: var(--ink); }
+  & .a3-diff-add { --diff-edge: var(--diff-add-rim); background: var(--diff-add-face); color: var(--ink); }
+  & .a3-diff-delete > span:nth-child(3) { color: var(--negative); }
+  & .a3-diff-add > span:nth-child(3) { color: var(--positive); }
+  & .a3-pr-evidence { border-color: var(--seam); }
+
+  & .a3-compact-content { background: var(--surface-review); border-color: var(--seam); box-shadow: var(--shadow-document); }
+  & .a3-compact-head { border-color: var(--seam); }
+  & .a3-compact-diff > code { background: var(--diff-remove-face); border-color: var(--diff-remove-rim); color: var(--negative); }
+  & .a3-compact-diff > code + code { background: var(--diff-add-face); border-color: var(--diff-add-rim); color: var(--positive); }
+  & .a3-compact-java { background: var(--surface-editor); }
+  & .a3-compact-proof { background: var(--proof); color: var(--proof-value); }
+}
